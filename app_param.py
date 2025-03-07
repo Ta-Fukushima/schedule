@@ -1,3 +1,0 @@
-WINDYAPI = {
-    "APIKEY":"fZEsEmzyEaCXzRKJokgVRoFiXydJRqlp"
-}

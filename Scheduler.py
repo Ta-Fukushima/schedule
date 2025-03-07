@@ -1,8 +1,6 @@
-
-# スケジュールを管理するクラス
 class Scheduler:
     def __init__(self):
-        return 
+        return
     
     def predict(self):
         return

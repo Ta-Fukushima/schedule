@@ -3,6 +3,3 @@ mplot3d-dragger
 matplotlib
 seaborn
 scikit-learn
-Flask
-requests
-certifi #SSL証明書

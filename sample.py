@@ -20,7 +20,7 @@ print(y.shape)
 fig=plt.figure()
 ax=Axes3D(fig)
 fig.add_axes(ax)
-
+ 
 ax.scatter3D(x1, x2, y)
 ax.set_xlabel("x1")
 ax.set_ylabel("x2")
