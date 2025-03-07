@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Data</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Weather Data</h1>
+    {% if data %}
+        <table>
+            <tr>
+                <th>Timestamp</th>
+                <th>Wind Speed (m/s)</th>
+                <th>Wind Direction (degrees)</th>
+                <!-- <th>Wave Height (m)</th> -->
+            </tr>
+            {% for i in range(data['ts']|length) %}
+                <tr>
+                    <td>{{ (data['ts'][i] / 1000) | datetimeformat }}</td>
+                    <td>{{ (data['wind_u-surface'][i]**2 + data['wind_v-surface'][i]**2)**0.5 | round(2) }}</td>
+                    <td>{{ (180 / 3.14159) * (3.14159 + (data['wind_v-surface'][i] / data['wind_u-surface'][i])) | round(2) }}</td>
+                    <!-- <td>{{ data.get('wave-surface', [None])[i] }}</td> -->
+                </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <p>No data available.</p>
+    {% endif %}
+</body>
+</html>
