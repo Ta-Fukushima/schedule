@@ -7,7 +7,7 @@ class WindyAPI:
         self.url = "https://api.windy.com/api/point-forecast/v2"
         self.api_key = api_key
 
-    def get_forecast(self, lat, lon, model='gfs', parameters=['wind', 'temp', 'precip']):
+    def get_forecast(self, lat, lon, model='gfs', parameters=['wind', 'temp', 'waves']):
         params = {
             'lat': lat,
             'lon': lon,

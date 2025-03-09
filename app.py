@@ -10,6 +10,7 @@ def sample_windy_api():
     api_key = app_param.WINDYAPI["APIKEY"]
     windy = WindyAPI.WindyAPI(api_key)
     data = windy.get_forecast(35.68, 139.76)
+    print(data)
     # 風速と風向を表示するコード
     for i in range(len(data['ts'])):
         wind_u = data['wind_u-surface'][i]
@@ -22,7 +23,7 @@ def sample_windy_api():
         wind_direction = (180 / 3.14159) * (3.14159 + (wind_v / wind_u))
         
         # 波の高さを取得
-        # wave_height = data.get('wave-surface', [None])[i]
+        wave_height = data.get('waves_height-surface', [None])[i]
         
         # タイムスタンプを表示
         timestamp = data['ts'][i]
@@ -30,7 +31,7 @@ def sample_windy_api():
         print(f"Timestamp: {timestamp}")
         print(f"Wind Speed: {wind_speed:.2f} m/s")
         print(f"Wind Direction: {wind_direction:.2f} degrees")
-        # print(f"Wave Height: {wave_height} m")
+        print(f"Wave Height: {wave_height} m")
         print("------")
         
     return render_template('index.html', data=data)
