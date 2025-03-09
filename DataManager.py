@@ -14,7 +14,9 @@ class RegressionDataManager:
     
     def standardize_data(self):
         sscaler = preprocessing.StandardScaler()
+        sscaler.fit(self.x)
         self.xss_sk = sscaler.transform(self.x)
+        sscaler.fit(self.y)
         self.yss_sk = sscaler.transform(self.y)
         return self.xss_sk, self.yss_sk
 
