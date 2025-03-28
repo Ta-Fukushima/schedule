@@ -2,7 +2,7 @@ from DataManager import RegressionDataManager
 from ModelManager import RegressionModelManager
 
 # データの前処理
-preprocessor = RegressionDataManager('winequality-red.csv')
+preprocessor = RegressionDataManager('training_data.csv')
 preprocessor.plot_data()
 xss_sk, yss_sk = preprocessor.standardize_data()
 

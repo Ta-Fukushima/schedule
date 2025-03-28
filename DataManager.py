@@ -7,10 +7,10 @@ from sklearn import preprocessing
 class RegressionDataManager:
     def __init__(self, file_path):
         self.df = pd.read_csv(file_path, sep=';')
-        self.x = self.df[['density', 'volatile acidity']]
-        self.y = self.df[['alcohol']]
-        self.x1 = self.df[['density']]
-        self.x2 = self.df[['volatile acidity']]
+        self.x = self.df[['wind_speed', 'distance']]
+        self.y = self.df[['time']]
+        self.x1 = self.df[['wind_speed']]
+        self.x2 = self.df[['distance']]
     
     def standardize_data(self):
         sscaler = preprocessing.StandardScaler()
