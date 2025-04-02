@@ -1,5 +1,5 @@
 WINDYAPI = {
-    "APIKEY":"fZEsEmzyEaCXzRKJokgVRoFiXydJRqlp"
+    "APIKEY":"ugL4KUdHxEi9gHyDnkMxH5fFSb8teIJT"
 }
 
 REGRESSION_MODEL_PARAM = {

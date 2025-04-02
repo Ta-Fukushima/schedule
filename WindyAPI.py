@@ -7,11 +7,12 @@ class WindyAPI:
         self.url = "https://api.windy.com/api/point-forecast/v2"
         self.api_key = api_key
 
-    def get_forecast(self, lat, lon, model='gfs', parameters=['wind', 'temp', 'waves']):
+    def get_forecast(self, lat, lon, model='gfs', parameters=['wind', 'temp']):
         params = {
             'lat': lat,
             'lon': lon,
             'model': model,
+            "levels": ["surface", "800h", "300h"],
             'parameters': parameters,
             'key': self.api_key
         }
@@ -27,4 +28,5 @@ class WindyAPI:
             return response.json()
         else:
             print(response.status_code)
+            print(response.text)
             return None

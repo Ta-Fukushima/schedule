@@ -22,8 +22,8 @@ def sample_windy_api():
         # 風向を計算（度単位）
         wind_direction = (180 / 3.14159) * (3.14159 + (wind_v / wind_u))
         
-        # 波の高さを取得
-        wave_height = data.get('waves_height-surface', [None])[i]
+        # # 波の高さを取得
+        # wave_height = data.get('waves_height-surface', [None])[i]
         
         # タイムスタンプを表示
         timestamp = data['ts'][i]
@@ -31,7 +31,7 @@ def sample_windy_api():
         print(f"Timestamp: {timestamp}")
         print(f"Wind Speed: {wind_speed:.2f} m/s")
         print(f"Wind Direction: {wind_direction:.2f} degrees")
-        print(f"Wave Height: {wave_height} m")
+        # print(f"Wave Height: {wave_height} m")
         print("------")
         
     return render_template('index.html', data=data)
