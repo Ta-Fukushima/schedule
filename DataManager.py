@@ -6,11 +6,14 @@ from sklearn import preprocessing
 # データの前処理をするクラス
 class RegressionDataManager:
     def __init__(self, file_path):
-        self.df = pd.read_csv(file_path, sep=';')
-        self.x = self.df[['wind_speed', 'distance']]
+        self.df = pd.read_csv(file_path, sep=',')
+        self.x = self.df[['wind_speed','wind_direction','ship_direction','ship_speed', 'distance']]
         self.y = self.df[['time']]
         self.x1 = self.df[['wind_speed']]
-        self.x2 = self.df[['distance']]
+        self.x2 = self.df[['wind_direction']]
+        self.x3 = self.df[['ship_direction']]
+        self.x4 = self.df[['ship_speed']]
+        self.x5 = self.df[['distance']]
     
     def standardize_data(self):
         sscaler = preprocessing.StandardScaler()
