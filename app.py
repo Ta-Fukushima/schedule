@@ -57,7 +57,7 @@ def sample_predict_schedule():
         # 予測する
         prediction = model.model.predict(X)
 
-        # 予測結果を表示する
+        # 予測結果を返す
         return prediction.tolist()
     
     except Exception as e:
